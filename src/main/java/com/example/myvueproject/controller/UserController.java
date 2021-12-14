@@ -26,6 +26,11 @@ public class UserController {
         return Result.success();
 
     }
+    @DeleteMapping("/{id}")
+    public Result<?> delete(@PathVariable Long id){
+        userMapper.deleteById(id);
+        return Result.success();
+    }
     @PostMapping
     //@RequestBody将前台穿过来的json数据转为封装为对象
     public Result<?> save(@RequestBody User user){
